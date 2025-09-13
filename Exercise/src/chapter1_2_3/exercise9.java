@@ -45,5 +45,19 @@ public class exercise9 {
         default: monthString = "Invalid month"; break;
 		}
         System.out.println(monthString);
+        
+        for (int i = 1; i < 11; i++) {
+			System.out.println("Count is: " + i);
+		}
+        
+        int count = 1;
+        while (count < 11) {
+			System.out.println("Count is: " + count);
+			count++;
+		}
+        do {
+        	System.out.println("Count is: " + count);
+        	count++;
+        }while(count < 11);
 	}
 }
