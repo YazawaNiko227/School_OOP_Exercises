@@ -9,7 +9,7 @@ package chapter1_2_3;
  * @version 1.0
  * @created date13 thg 9, 2025 time22:48:15
  */
-public class exercise6 {
+public class exercise06 {
 	    public static void main(String[] args) {
 	    	int result = 1 + 2;            // result = 3
 	    	System.out.println("1 + 2 = " + result);  // In ra: 1 + 2 = 3

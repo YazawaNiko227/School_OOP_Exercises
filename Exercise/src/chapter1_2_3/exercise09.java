@@ -9,7 +9,7 @@ package chapter1_2_3;
  * @version 1.0
  * @created date13 thg 9, 2025 time23:02:45
  */
-public class exercise9 {
+public class exercise09 {
 	public static void main(String[] args) {
 		int testScore = 76;
 		char grade;
