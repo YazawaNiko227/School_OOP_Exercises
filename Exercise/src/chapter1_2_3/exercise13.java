@@ -20,14 +20,16 @@ public class exercise13 {
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
 		int number = input.nextInt();
+		int sum = 0;
 		StringBuilder output = new StringBuilder();
 		for (int i = 1; i <= number; i++) {
+			sum += i;
 			output.append(i);
 			if(i < number) {
 				output.append('+');
 			}
 		}
-		System.out.println(output);
+		System.out.println(output + " = " + sum);
 	}
 
 }
