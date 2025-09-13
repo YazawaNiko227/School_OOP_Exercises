@@ -17,6 +17,7 @@ public class exercise14 {
 	 * @param args
 	 */
 	public static void main(String[] args) {
+		@SuppressWarnings("resource")
 		Scanner input = new Scanner(System.in);
 		int sum = 0;
 		int number =  input.nextInt();
