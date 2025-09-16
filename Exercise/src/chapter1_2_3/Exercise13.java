@@ -11,7 +11,7 @@ import java.util.Scanner;
  * @version 1.0
  * @created date13 thg 9, 2025 time23:41:00
  */
-public class exercise13 {
+public class Exercise13 {
 
 	/**
 	 * @param args

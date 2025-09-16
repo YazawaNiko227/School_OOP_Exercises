@@ -9,7 +9,7 @@ package chapter1_2_3;
  * @version 1.0
  * @created date13 thg 9, 2025 time22:56:10
  */
-public class exercise07 {
+public class Exercise07 {
 	public static void main(String[] args) {
 			int value1 = 1;
 	        int value2 = 2;

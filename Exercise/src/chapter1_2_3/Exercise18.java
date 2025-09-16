@@ -9,7 +9,7 @@ package chapter1_2_3;
  * @version 1.0
  * @created date16 thg 9, 2025 time14:59:51
  */
-public class exercise18 {
+public class Exercise18 {
 
 	/**
 	 * @param args
