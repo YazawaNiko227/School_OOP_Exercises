@@ -15,7 +15,6 @@ public class exercise18 {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		int basicNumber = 3;
 		System.out.println("Boi cua 3 la: ");
 		for (int i = 3; i <= 300; i += 3) {
 			if(i % 3 == 0) {
