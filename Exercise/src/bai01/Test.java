@@ -31,6 +31,7 @@ public class Test {
 		    HinhChuNhat hcn = new HinhChuNhat(dai, rong);
 		    System.out.println(hcn);
 		}
+		input.close();;
 
 	}
 
