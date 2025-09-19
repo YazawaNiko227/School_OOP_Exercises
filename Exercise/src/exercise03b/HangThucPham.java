@@ -123,7 +123,7 @@ public class HangThucPham {
 	@Override
 	public String toString() {
 
-		return String.format("%0s | %s | %s | %s | %s", 
+		return String.format("%s | %s | %s | %s | %s", 
 				productCode,
 				productName,
 				nf.format(unitPrice),
