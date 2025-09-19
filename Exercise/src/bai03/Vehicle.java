@@ -5,6 +5,7 @@ package bai03;
 
 import java.text.NumberFormat;
 import java.util.Locale;
+import java.util.Scanner;
 
 /**
  * @description Iuh_Fit_Cs_Stt36_24741631
@@ -17,6 +18,8 @@ public class Vehicle {
 	private String typeVehicle;
 	private int xylanh;
 	private double price;
+	
+	NumberFormat nf = NumberFormat.getCurrencyInstance(new Locale("vi", "VN"));
 	/**
 	 * @return the ownerName
 	 */
@@ -106,9 +109,25 @@ public class Vehicle {
 		}
 	}
 	
+	public void InputVehicle(Scanner input) {
+		System.out.println("Nhap ten chu xe");
+		ownerName =  input.nextLine();
+		System.out.println("Nhap loai xe");
+		typeVehicle = input.nextLine();
+		System.out.println("Nhap xylanh");
+		xylanh = input.nextInt();
+		System.out.println("Nhap gia");
+		price = input.nextDouble();
+		input.nextLine();
+	}
+	
+	public void showVehicle() {
+	    System.out.printf("| %-20s | %-15s | %-10d | %-15s | %-15s |\n",
+	            ownerName, typeVehicle, xylanh, nf.format(price), nf.format(Tax()));
+	}
+
 	@Override
 	public String toString() {
-        NumberFormat nf = NumberFormat.getCurrencyInstance(new Locale("vi", "VN"));
         return String.format("%s | %s | %d | %s | %s",
                 ownerName, typeVehicle, xylanh, nf.format(price), nf.format(Tax()));
     }
