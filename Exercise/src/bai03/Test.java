@@ -12,7 +12,6 @@ public class Test {
 
     public static void main(String[] args) {
     	Vehicle[] xe = new Vehicle[3];
-    	@SuppressWarnings("resource")
 		Scanner input = new Scanner(System.in);
     	
     	boolean exit = true;
@@ -24,7 +23,7 @@ public class Test {
             System.out.print("Chọn: ");
     		
     		int choice = input.nextInt();
-
+    		input.nextLine();
     		switch (choice) {
 			case 1:
 				System.out.println("1. Nhập thông tin và tạo các đối tượng xe1, xe2, xe3");
@@ -35,17 +34,20 @@ public class Test {
 				}
 				break;
 			case 2:
-				System.out.println("Xuất bảng kê khai tiền thuế trước bạ của các xe.");
-				String format = "| %-20s | %-15s | %-10s | %-15s | %-15s |\n";
+			    System.out.println("Xuất bảng kê khai tiền thuế trước bạ của các xe.");
+			    String format = "| %-20s | %-15s | %-10s | %-15s | %-15s |\n";
+			    System.out.format(format, "Tên chủ xe", "Loại xe", "Dung tích", "Trị giá", "Thuế phải nộp");
+			    System.out.println("---------------------------------------------------------------------------------------------");
 
-		        System.out.format(format, "Tên chủ xe", "Loại xe", "Dung tích", "Trị giá", "Thuế phải nộp");
-		        System.out.println("---------------------------------------------------------------------------------------------");
-		        
-		        for (int i = 0; i < xe.length; i++) {
-					xe[i].showVehicle();
-					System.out.println();
-				}
-				break;
+			    for (int i = 0; i < xe.length; i++) {
+			        if (xe[i] != null) {
+			            xe[i].showVehicle();
+			        } else {
+			            System.out.printf("| %-20s | %-15s | %-10s | %-15s | %-15s |\n", "Chưa nhập", "-", "-", "-", "-");
+			        }
+			    }
+			    break;
+
 			case 3:
 				System.out.println("3. Thoát.");
 				exit = false;
@@ -54,5 +56,6 @@ public class Test {
 				break;
 			}
     	}
+    	input.close();
     }
 }

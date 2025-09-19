@@ -100,15 +100,15 @@ public class Vehicle {
 	}
 	
 	public double Tax() {
-		if(xylanh < 100) {
-			return price * (double)1/100;
-		}else if(xylanh >= 100 && xylanh < 200) {
-			return price * (double)3/100;
-		}else {
-			return price * (double)5/100;
-		}
+	    if (xylanh < 100) {
+	        return price * 0.01;
+	    } else if (xylanh < 200) {
+	        return price * 0.03;
+	    } else {
+	        return price * 0.05;
+	    }
 	}
-	
+
 	public void InputVehicle(Scanner input) {
 		System.out.println("Nhap ten chu xe");
 		ownerName =  input.nextLine();
