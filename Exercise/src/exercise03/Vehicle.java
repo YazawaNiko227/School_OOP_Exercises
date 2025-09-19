@@ -1,7 +1,7 @@
 /**
  * 
  */
-package bai03;
+package exercise03;
 
 import java.text.NumberFormat;
 import java.util.Locale;

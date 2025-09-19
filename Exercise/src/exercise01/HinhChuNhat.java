@@ -1,7 +1,7 @@
 /**
  * 
  */
-package bai01;
+package exercise01;
 
 /**
  * @description Iuh_Fit_Cs_Stt36_24741631

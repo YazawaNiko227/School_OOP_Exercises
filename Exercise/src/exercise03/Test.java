@@ -1,4 +1,4 @@
-package bai03;
+package exercise03;
 
 import java.util.Scanner;
 

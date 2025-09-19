@@ -1,7 +1,7 @@
 /**
  * 
  */
-package bai02;
+package exercise02;
 
 import java.util.Scanner;
 
