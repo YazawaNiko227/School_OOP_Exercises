@@ -3,6 +3,9 @@
  */
 package bai03;
 
+import java.text.NumberFormat;
+import java.util.Locale;
+
 /**
  * @description Iuh_Fit_Cs_Stt36_24741631
  * @author Phan Đức Toàn
@@ -93,5 +96,20 @@ public class Vehicle {
 		setPrice(price);
 	}
 	
+	public double Tax() {
+		if(xylanh < 100) {
+			return price * (double)1/100;
+		}else if(xylanh >= 100 && xylanh < 200) {
+			return price * (double)3/100;
+		}else {
+			return price * (double)5/100;
+		}
+	}
 	
+	@Override
+	public String toString() {
+        NumberFormat nf = NumberFormat.getCurrencyInstance(new Locale("vi", "VN"));
+        return String.format("%s | %s | %d | %s | %s",
+                ownerName, typeVehicle, xylanh, nf.format(price), nf.format(Tax()));
+    }
 }
