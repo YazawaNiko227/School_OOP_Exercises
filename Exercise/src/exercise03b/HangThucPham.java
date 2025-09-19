@@ -3,7 +3,10 @@
  */
 package exercise03b;
 
+import java.text.NumberFormat;
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.Locale;
 
 /**
  * @description Iuh_Fit_Cs_Stt36_24741631
@@ -17,6 +20,9 @@ public class HangThucPham {
 	private double unitPrice;
 	private LocalDate productionDate;
 	private LocalDate expirationDate;
+	
+	DateTimeFormatter dateFormat = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+	NumberFormat nf = NumberFormat.getCurrencyInstance(new Locale("vi", "VN"));
 	/**
 	 * @param productCode
 	 * @param productName
@@ -49,7 +55,7 @@ public class HangThucPham {
 	 */
 	public void setProductCode(String productCode) {
 		if(productCode == null || productCode.isEmpty()) {
-			throw new IllegalArgumentException("Ma hang khong duoc de trong.");
+			this.productCode = "???";
 		}
 		this.productCode = productCode;
 	}
@@ -64,7 +70,7 @@ public class HangThucPham {
 	 */
 	public void setProductName(String productName) {
 		if(productName == null || productName.isEmpty()) {
-			throw new IllegalArgumentException("Ten hang khong duoc de trong.");
+			this.productName = "Unknown";
 		}
 		this.productName = productName;
 	}
@@ -79,7 +85,7 @@ public class HangThucPham {
 	 */
 	public void setUnitPrice(double unitPrice) {
 		if(unitPrice <= 0) {
-			throw new IllegalArgumentException("Don gia phai lon hon 0.");
+			this.unitPrice = 1.0;
 		}
 		this.unitPrice = unitPrice;
 	}
@@ -94,7 +100,7 @@ public class HangThucPham {
 	 */
 	public void setProductionDate(LocalDate productionDate) {
 		if(productionDate == null) {
-			throw new IllegalArgumentException("Ngay khong duoc de trong.");
+			this.productionDate = LocalDate.now();
 		}
 		this.productionDate = productionDate;
 	}
@@ -109,11 +115,21 @@ public class HangThucPham {
 	 */
 	public void setExpirationDate(LocalDate expirationDate) {
 		if(expirationDate == null || expirationDate.isBefore(productionDate)) {
-			throw new IllegalArgumentException("Ngay het han phai sau ngay san xuat va khong de trong.");
+			this.expirationDate = LocalDate.now().plusDays(1);
 		}
 		this.expirationDate = expirationDate;
 	}
 	
-	
+	@Override
+	public String toString() {
+
+		return String.format("%0s | %s | %s | %s | %s", 
+				productCode,
+				productName,
+				nf.format(unitPrice),
+				dateFormat.format(productionDate),
+				dateFormat.format(expirationDate)
+				);
+	}
 }
 	
