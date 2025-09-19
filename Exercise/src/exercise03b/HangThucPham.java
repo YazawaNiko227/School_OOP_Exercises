@@ -36,7 +36,7 @@ public class HangThucPham {
 	 * 
 	 */
 	public HangThucPham(String productCode) {
-		this(productCode, "No name", 1.0, LocalDate.now(), LocalDate.now().plusDays(1));
+		this(productCode, "Unknown", 1.0, LocalDate.now(), LocalDate.now().plusDays(1));
 	}
 	/**
 	 * @return the productCode
@@ -48,6 +48,9 @@ public class HangThucPham {
 	 * @param productCode the productCode to set
 	 */
 	public void setProductCode(String productCode) {
+		if(productCode == null || productCode.isEmpty()) {
+			throw new IllegalArgumentException("Ma hang khong duoc de trong.");
+		}
 		this.productCode = productCode;
 	}
 	/**
@@ -60,6 +63,9 @@ public class HangThucPham {
 	 * @param productName the productName to set
 	 */
 	public void setProductName(String productName) {
+		if(productName == null || productName.isEmpty()) {
+			throw new IllegalArgumentException("Ten hang khong duoc de trong.");
+		}
 		this.productName = productName;
 	}
 	/**
@@ -72,6 +78,9 @@ public class HangThucPham {
 	 * @param unitPrice the unitPrice to set
 	 */
 	public void setUnitPrice(double unitPrice) {
+		if(unitPrice <= 0) {
+			throw new IllegalArgumentException("Don gia phai lon hon 0.");
+		}
 		this.unitPrice = unitPrice;
 	}
 	/**
@@ -84,6 +93,9 @@ public class HangThucPham {
 	 * @param productionDate the productionDate to set
 	 */
 	public void setProductionDate(LocalDate productionDate) {
+		if(productionDate == null) {
+			throw new IllegalArgumentException("Ngay khong duoc de trong.");
+		}
 		this.productionDate = productionDate;
 	}
 	/**
@@ -96,6 +108,9 @@ public class HangThucPham {
 	 * @param expirationDate the expirationDate to set
 	 */
 	public void setExpirationDate(LocalDate expirationDate) {
+		if(expirationDate == null || expirationDate.isBefore(productionDate)) {
+			throw new IllegalArgumentException("Ngay het han phai sau ngay san xuat va khong de trong.");
+		}
 		this.expirationDate = expirationDate;
 	}
 	
