@@ -26,10 +26,10 @@ public class CompactDisk {
 	 * @param prices
 	 */
 	public CompactDisk(int codeCD, String titleCD, int numSongs, double prices) {
-		this.codeCD = codeCD;
-		this.titleCD = titleCD;
-		this.numSongs = numSongs;
-		this.prices = prices;
+		setCodeCD(codeCD);
+		setTitleCD(titleCD);
+		setNumSongs(numSongs);
+		setPrices(prices);
 	}
 	/**
 	 * 
