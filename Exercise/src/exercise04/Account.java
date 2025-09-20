@@ -140,7 +140,7 @@ public class Account {
 		return moneyAccount;
 	}
 	
-	public double mature() {
+	public double matureInterest() {
 	    this.moneyAccount += this.moneyAccount * INTEREST_RATE;
 	    return moneyAccount;
 	}
@@ -148,7 +148,7 @@ public class Account {
 	@Override
 	public String toString() {
 
-		return String.format("%6s | %20s | %20s | %10s | %50s", 
+		return String.format("%6s | %20s | %15s | %10s | %20s", 
 				numberAccount,
 				nameAccount,
 				nf.format(moneyAccount),
