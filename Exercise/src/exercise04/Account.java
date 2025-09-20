@@ -18,6 +18,7 @@ public class Account {
 	private double moneyAccount;
 	private StatusAccount status;
 	private String message;
+	public final double INTEREST_RATE = 0.035;
 	
 	NumberFormat nf = NumberFormat.getCurrencyInstance(new Locale("vi", "VN"));
 	/**
@@ -52,7 +53,7 @@ public class Account {
 	public void setNumberAccount(long numberAccount) {
 		if(numberAccount <= 0 || numberAccount == 999999) {
 			this.numberAccount = 999999;
-			this.message = "So tai khoan; ";
+			this.message += "So tai khoan; ";
 		}
 		this.numberAccount = numberAccount;
 	}
@@ -70,7 +71,7 @@ public class Account {
 	public void setNameAccount(String nameAccount) {
 		if(nameAccount == null || nameAccount.isEmpty()) {
 			this.nameAccount = "Chưa xác định";
-			this.message = "Ten tai khoan; ";
+			this.message += "Ten tai khoan; ";
 		}
 		this.nameAccount = nameAccount;
 	}
@@ -88,7 +89,7 @@ public class Account {
 	public void setMoneyAccount(double moneyAccount) {
 		if(moneyAccount < 50) {
 			this.moneyAccount = 50;
-			this.message = "Tien tai khoan; ";
+			this.message += "Tien tai khoan; ";
 		}
 		this.moneyAccount = moneyAccount;
 	}
@@ -114,6 +115,36 @@ public class Account {
 		return message;
 	}
 	
+	public double deposit(double amount) {
+		if(amount <= 0) {
+			throw new IllegalArgumentException("So tien khong hop le");
+		}
+		this.moneyAccount += amount;
+		return moneyAccount;
+	}
+	
+	public double withdraw(double amount) {
+		if(amount >= moneyAccount || amount <= 0) {
+			throw new IllegalArgumentException("So tien khong hop le");
+		}
+		this.moneyAccount -= amount;
+		return moneyAccount;
+	}
+	
+	public double transfer(Account orther, double amount) {
+		if(orther == null || amount <= 0 || amount > this.moneyAccount) {
+			throw new IllegalArgumentException("Chuyen tien that bai");
+		}
+		this.moneyAccount -= amount;
+		orther.moneyAccount += amount;
+		return moneyAccount;
+	}
+	
+	public double mature() {
+	    this.moneyAccount += this.moneyAccount * INTEREST_RATE;
+	    return moneyAccount;
+	}
+
 	@Override
 	public String toString() {
 
