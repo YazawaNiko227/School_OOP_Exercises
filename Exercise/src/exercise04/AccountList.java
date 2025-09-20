@@ -14,7 +14,7 @@ public class AccountList {
 	private int count = 0;
 	
 	public AccountList(int capacity) {
-		if(capacity < 0) {
+		if(capacity <= 0) {
 			list = new Account[10];
 		}
 		list = new Account[capacity];
@@ -25,7 +25,7 @@ public class AccountList {
 	}
 	
 	public void addAccount(Account list) {
-		if(count > this.list.length || list == null) {
+		if(count >= this.list.length || list == null) {
 			throw new IllegalArgumentException("Them tai khoan that bai.");
 		}
 		this.list[count++] = list;
@@ -37,21 +37,19 @@ public class AccountList {
 				return i;
 			}
 		}
-		return 0;
+		return -1;
 	}
 	
 	public void removeAccount(long numberAccount) {
 		int index = findAccountByNumber(numberAccount);
-		if(index != 0) {
-			for (int i = index; i < count; i++) {
-				for (int j = i; j < count - 1; j++) {
-					list[j] = list[++j];
-				}
-			}
-			list[--count] = null;
-		}else {
-			System.out.println("Khong tim thay tai khoan.");
-		}
+        if (index != -1) {
+            for (int i = index; i < count - 1; i++) {
+                list[i] = list[i + 1];
+            }
+            list[--count] = null;
+        } else {
+            System.out.println("Không tìm thấy tài khoản.");
+        }
 	}
 
 	/**
