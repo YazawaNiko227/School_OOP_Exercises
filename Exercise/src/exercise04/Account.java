@@ -3,6 +3,9 @@
  */
 package exercise04;
 
+import java.text.NumberFormat;
+import java.util.Locale;
+
 /**
  * @description Iuh_Fit_Cs_Stt36_24741631
  * @author Phan Đức Toàn
@@ -15,6 +18,8 @@ public class Account {
 	private double moneyAccount;
 	private StatusAccount status;
 	private String message;
+	
+	NumberFormat nf = NumberFormat.getCurrencyInstance(new Locale("vi", "VN"));
 	/**
 	 * @param numberAccount
 	 * @param nameAccount
@@ -109,5 +114,15 @@ public class Account {
 		return message;
 	}
 	
-	
+	@Override
+	public String toString() {
+
+		return String.format("%6s | %20s | %20s | %10s | %50s", 
+				numberAccount,
+				nameAccount,
+				nf.format(moneyAccount),
+				status,
+				message
+				);
+	}
 }
