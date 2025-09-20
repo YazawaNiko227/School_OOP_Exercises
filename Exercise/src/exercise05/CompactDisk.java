@@ -49,8 +49,9 @@ public class CompactDisk {
 	public void setCodeCD(int codeCD) {
 		if(codeCD <= 0) {
 			this.codeCD = 999999;
+		}else {
+			this.codeCD = codeCD;
 		}
-		this.codeCD = codeCD;
 	}
 	/**
 	 * @return the titleCD
@@ -64,8 +65,9 @@ public class CompactDisk {
 	public void setTitleCD(String titleCD) {
 		if(titleCD == null || titleCD.isEmpty()) {
 			titleCD = "chưa xác định";
+		}else {
+			this.titleCD = titleCD;
 		}
-		this.titleCD = titleCD;
 	}
 	/**
 	 * @return the numSongs
@@ -100,7 +102,7 @@ public class CompactDisk {
 	
 	@Override
 	public String toString() {
-
-		return String.format("%06s | %10s | %10s | %10s", codeCD, titleCD, numSongs, nf.format(prices));
+	    return String.format("%06d | %-15s | %3d | %s", codeCD, titleCD, numSongs, nf.format(prices));
 	}
+
 }
