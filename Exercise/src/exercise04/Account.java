@@ -1,0 +1,113 @@
+/**
+ * 
+ */
+package exercise04;
+
+/**
+ * @description Iuh_Fit_Cs_Stt36_24741631
+ * @author Phan Đức Toàn
+ * @version 1.0
+ * @created date20 thg 9, 2025 time10:39:16
+ */
+public class Account {
+	private long numberAccount;
+	private String nameAccount;
+	private double moneyAccount;
+	private StatusAccount status;
+	private String message;
+	/**
+	 * @param numberAccount
+	 * @param nameAccount
+	 * @param moneyAccount
+	 * @param status
+	 * @param message 
+	 */
+	public Account(long numberAccount, String nameAccount, double moneyAccount, StatusAccount status, String message) {
+		this.message = message;
+		setNumberAccount(numberAccount);
+		setNameAccount(nameAccount);
+		setMoneyAccount(moneyAccount);
+		setStatus(status);
+	}
+
+	public Account() {
+		this(999999, "Chưa xác định", 50, StatusAccount.ACTIVE, "");
+	}
+
+	/**
+	 * @return the numberAccount
+	 */
+	public long getNumberAccount() {
+		return numberAccount;
+	}
+
+	/**
+	 * @param numberAccount the numberAccount to set
+	 */
+	public void setNumberAccount(long numberAccount) {
+		if(numberAccount <= 0 || numberAccount == 999999) {
+			this.numberAccount = 999999;
+			this.message = "So tai khoan; ";
+		}
+		this.numberAccount = numberAccount;
+	}
+
+	/**
+	 * @return the nameAccount
+	 */
+	public String getNameAccount() {
+		return nameAccount;
+	}
+
+	/**
+	 * @param nameAccount the nameAccount to set
+	 */
+	public void setNameAccount(String nameAccount) {
+		if(nameAccount == null || nameAccount.isEmpty()) {
+			this.nameAccount = "Chưa xác định";
+			this.message = "Ten tai khoan; ";
+		}
+		this.nameAccount = nameAccount;
+	}
+
+	/**
+	 * @return the moneyAccount
+	 */
+	public double getMoneyAccount() {
+		return moneyAccount;
+	}
+
+	/**
+	 * @param moneyAccount the moneyAccount to set
+	 */
+	public void setMoneyAccount(double moneyAccount) {
+		if(moneyAccount < 50) {
+			this.moneyAccount = 50;
+			this.message = "Tien tai khoan; ";
+		}
+		this.moneyAccount = moneyAccount;
+	}
+
+	/**
+	 * @return the status
+	 */
+	public StatusAccount getStatus() {
+		return status;
+	}
+
+	/**
+	 * @param status the status to set
+	 */
+	public void setStatus(StatusAccount status) {
+		this.status = status;
+	}
+
+	/**
+	 * @return the message
+	 */
+	public String getMessage() {
+		return message;
+	}
+	
+	
+}
