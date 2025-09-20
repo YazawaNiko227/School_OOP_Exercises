@@ -30,4 +30,41 @@ public class AccountList {
 		}
 		this.list[count++] = list;
 	}
+	
+	public int findAccountByNumber(long numberAccount) {
+		for (int i = 0; i < count; i++) {
+			if(numberAccount == list[i].getNumberAccount()) {
+				return i;
+			}
+		}
+		return 0;
+	}
+	
+	public void removeAccount(long numberAccount) {
+		int index = findAccountByNumber(numberAccount);
+		if(index != 0) {
+			for (int i = index; i < count; i++) {
+				for (int j = i; j < count - 1; j++) {
+					list[j] = list[++j];
+				}
+			}
+			list[--count] = null;
+		}else {
+			System.out.println("Khong tim thay tai khoan.");
+		}
+	}
+
+	/**
+	 * @return the count
+	 */
+	public int getCount() {
+		return count;
+	}
+	
+	 public void printAllAccounts() {
+	        System.out.println("Danh sách tài khoản:");
+	        for (int i = 0; i < count; i++) {
+	            System.out.println(list[i]);
+	        }
+	   }
 }
