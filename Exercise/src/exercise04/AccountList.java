@@ -10,7 +10,7 @@ package exercise04;
  * @created date20 thg 9, 2025 time11:24:15
  */
 public class AccountList {
-	private Account[] list;
+	Account[] list;
 	private int count = 0;
 	
 	public AccountList(int capacity) {
