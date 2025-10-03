@@ -6,7 +6,7 @@
 package chapter4_exercise01;
 
 import java.text.NumberFormat;
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Locale;
 
@@ -15,12 +15,12 @@ import java.util.Locale;
  */
 public abstract class Bill {
 	protected String billCode;
-	protected LocalDate billDate;
+	protected LocalDateTime billDate;
 	protected String clientName;
 	protected String roomCode;
 	protected double price;
 	
-	public Bill(String billCode, LocalDate billDate, String clientName, String roomCode, double price) {
+	public Bill(String billCode, LocalDateTime billDate, String clientName, String roomCode, double price) {
 		setBillCode(billCode);
 		setBillDate(billDate);
 		setClientName(clientName);
@@ -29,7 +29,7 @@ public abstract class Bill {
 	}
 
 	public Bill() {
-		this("Empty", LocalDate.now(), "Empty", "Empty", 0.0);
+		this("Empty", LocalDateTime.now(), "Empty", "Empty", 0.0);
 	}
 
 	public String getBillCode() {
@@ -43,13 +43,13 @@ public abstract class Bill {
 		this.billCode = billCode;
 	}
 
-	public LocalDate getBillDate() {
+	public LocalDateTime getBillDate() {
 		return billDate;
 	}
 
-	public void setBillDate(LocalDate billDate) {
-		if(billDate.isAfter(LocalDate.now()) || billDate == null) {
-			billDate = LocalDate.now();
+	public void setBillDate(LocalDateTime billDate) {
+		if(billDate.isAfter(LocalDateTime.now()) || billDate == null) {
+			billDate = LocalDateTime.now();
 		}
 		this.billDate = billDate;
 	}
