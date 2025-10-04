@@ -8,12 +8,10 @@ package Chapter4_exercise03;
 import java.util.Arrays;
 
 public class SoftwareHouse {
-    private String theName;
     private Employee[] listStaff;
     private int numberOfStaff;
 
     public SoftwareHouse(String theName, int capacity) {
-        this.theName = theName;
         listStaff = new Employee[Math.max(capacity, 10)];
         numberOfStaff = 0;
     }
