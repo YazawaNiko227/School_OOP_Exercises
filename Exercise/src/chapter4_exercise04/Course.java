@@ -5,6 +5,9 @@
  */
 package chapter4_exercise04;
 
+import java.util.HashSet;
+import java.util.Set;
+
 /**
  * 
  */
@@ -12,6 +15,7 @@ public class Course {
 	private String courseNbr;
 	private String courseTitle;
 	private int credits;
+	private Set<Section> section = new HashSet<>();
 	public Course(String courseNbr, String courseTitle, int credits) {
 		setCourseNbr(courseNbr);
 		setCourseTitle(courseTitle);
@@ -46,5 +50,12 @@ public class Course {
 			credits = 0;
 		}
 		this.credits = credits;
+	}
+	public void addSection(String sectionNbr, String semester, String room, Faculty facultyMember, Set<Enrolment> listEnrolls)
+	{
+		section.add(new Section(sectionNbr, semester, room, facultyMember, listEnrolls));
+	}
+	public int getNbrStudents(String sectionNbr) {
+		return 0;
 	}
 }

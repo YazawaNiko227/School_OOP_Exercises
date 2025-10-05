@@ -33,4 +33,8 @@ public class Student extends Person{
 		}
 		this.yearMatriculated = yearMatriculated;
 	}
+	@Override
+	public String toString() {
+	    return getLastName() + " " + getFirstName() + " " + studentID;
+	}
 }

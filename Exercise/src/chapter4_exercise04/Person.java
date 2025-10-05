@@ -33,4 +33,9 @@ public class Person {
 		}
 		this.firstName = firstName;
 	}
+	
+	@Override
+	public String toString() {
+		return lastName + " " + firstName;
+	}
 }
