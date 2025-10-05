@@ -56,6 +56,15 @@ public class Course {
 		section.add(new Section(sectionNbr, semester, room, facultyMember, listEnrolls));
 	}
 	public int getNbrStudents(String sectionNbr) {
-		return 0;
+	    for (Section sec : section) {
+	        if (sec.getSectionNbr().equals(sectionNbr)) {
+	            return sec.getListEnrolls() != null ? sec.getListEnrolls().size() : 0;
+	        }
+	    }
+	    return 0;
+	}
+
+	public Set<Section> getSections() {
+	    return section;
 	}
 }

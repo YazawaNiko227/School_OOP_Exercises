@@ -55,4 +55,20 @@ public class Section {
 		}
 		this.room = room;
 	}
+	public Faculty getFacultyMember() {
+	    return facultyMember;
+	}
+
+	public void setFacultyMember(Faculty facultyMember) {
+	    this.facultyMember = facultyMember;
+	}
+
+	public Set<Enrolment> getListEnrolls() {
+	    return listEnrolls;
+	}
+
+	public void setListEnrolls(Set<Enrolment> listEnrolls) {
+	    this.listEnrolls = listEnrolls;
+	}
+
 }
