@@ -39,6 +39,4 @@ public class Faculty extends Person{
 		}
 		this.office = office;
 	}
-	
-	
 }
