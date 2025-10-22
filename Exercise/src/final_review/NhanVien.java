@@ -1,6 +1,7 @@
 package final_review;
 
 import java.text.DecimalFormat;
+import java.util.Objects;
 
 public abstract class NhanVien {
 	protected final String maSo;
@@ -55,7 +56,24 @@ public abstract class NhanVien {
 	}
 	
 	protected abstract double tienLuong();
-	
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(maSo);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+//		if (getClass() != obj.getClass())
+//			return false;
+		NhanVien other = (NhanVien) obj;
+		return Objects.equals(maSo, other.maSo);
+	}
+
 	@Override
 	public String toString() {
 		return String.format("%10s | %15s | %15s | %10s | ", 
