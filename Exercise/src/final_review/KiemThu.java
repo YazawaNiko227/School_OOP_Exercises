@@ -66,6 +66,9 @@ public class KiemThu {
         List<NhanVien> lonNhat = quanLy.getDSLonNhat();
         lonNhat.forEach(System.out::println);
 
+        System.out.println("\nThông tin nhân viên trước cập nhật:");
+        quanLy.inNhanVien().forEach(System.out::println);
+        
         // Cập nhật hệ số lương đúng
         System.out.println("\nCập nhật hệ số lương cho VP002:");
         boolean capNhat1 = quanLy.capNhatNhanVien("VP002", 4.0);
@@ -85,10 +88,8 @@ public class KiemThu {
         }
 
         // In lại thông tin sau cập nhật
+
         System.out.println("\nThông tin nhân viên sau cập nhật:");
-        thongKe = quanLy.thongKeLuongTrungBinh();
-        thongKe.forEach((loai, luongTB) ->
-            System.out.printf("%s: %.2f VND%n", loai, luongTB)
-        );
+        quanLy.inNhanVien().forEach(System.out::println);
     }
 }

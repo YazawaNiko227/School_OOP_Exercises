@@ -56,4 +56,8 @@ public class QuanLyNhanVien {
 		}
 		return false;
 	}
+	
+	public List<NhanVien> inNhanVien() {
+		return quanLy;
+	}
 }
