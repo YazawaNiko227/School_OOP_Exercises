@@ -92,6 +92,7 @@ public abstract class Bill {
 	@Override
 	public String toString() {
 		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+		@SuppressWarnings("deprecation")
 		NumberFormat nf = NumberFormat.getCurrencyInstance(new Locale("vi", "VN"));
 		return String.format("| %s | %s | %s | %s | %s |",
 				getBillCode(),
