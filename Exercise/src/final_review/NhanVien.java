@@ -8,7 +8,7 @@ public abstract class NhanVien {
 	protected String dienThoai;
 	protected double luongCanBan;
 	
-	DecimalFormat df = new DecimalFormat("###.### VND");
+	DecimalFormat df = new DecimalFormat("###,### VND");
 	
 	public NhanVien(String maSo, String hoVaTen, String dienThoai) {
 		if(maSo == null || maSo.isEmpty()) {
