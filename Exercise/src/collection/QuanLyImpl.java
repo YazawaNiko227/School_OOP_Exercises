@@ -38,7 +38,7 @@ public interface QuanLyImpl {
 	int tinhTongSoBongDen();
 	
 	// Viết phương thức để tính trung bình diện tích của các phòng học.
-	int tinhTrungBinhDienTich();
+	double tinhTrungBinhDienTich();
 	
 	// Viết các phương thức để lấy danh sách các phòng học đạt chuẩn.
 	List<PhongHoc> layDanhSachPhongHocDatChuan();
